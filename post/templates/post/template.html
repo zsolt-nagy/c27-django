@@ -8,5 +8,11 @@
 </head>
 <body>
     <h1>Blog posts</h1>
+    <p>You have {{ count }} blogpost(s).</p>
+    {% for post in posts %}
+        <h2>{{ post.title }}</h2>
+        <p>Author {{ post.author }}</p>
+        <p>{{ post.description }}</p>
+    {% endfor %}
 </body>
 </html>
