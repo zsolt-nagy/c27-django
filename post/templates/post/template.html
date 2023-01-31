@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog posts</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}
+    Blog Posts - Home
+{% endblock %}
+
+{% block content %}
     <h1>Blog posts</h1>
-    <p>You have {{ count }} blogpost(s).</p>
+    <p>You have {{ count }} blogpost{{ count|pluralize }}.</p>
     {% for post in posts %}
         <h2>{{ post.title }}</h2>
         <p>Author {{ post.author }}</p>
         <p>{{ post.description }}</p>
     {% endfor %}
-</body>
-</html>
+{% endblock %}

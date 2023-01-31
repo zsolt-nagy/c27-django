@@ -1,0 +1,29 @@
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+a {
+    color: lightskyblue;
+}
+
+a:hover {
+    color: deepskyblue;
+}
+
+a:visited {
+    color: lightgreen;
+}
+
+a:active {
+    color: lightpink;
+}
+
+body {
+    color: whitesmoke;
+    background-color: #111111;
+}
