@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Create new post
+{% endblock %}
+
+{% block content %}
+
+    <form action="{% url 'new_post' %}" method="POST" class="container">
+        {% csrf_token %}
+        {% if message %}
+        <div class="alert alert-{{ type }}" role="alert">
+            {{ message }}
+        </div>
+        {% endif %}        
+        <div class="row">
+            <div class="col-12 col-xl-6 mb-3">
+                <div class="form-floating">
+                    <input 
+                        type="text" 
+                        name="title"
+                        class="form-control" 
+                        id="floatingTitleInput" 
+                        placeholder="Title"
+                        required>
+                    <label for="floatingTitleInput">Title</label>
+                </div>
+            </div>
+            <div class="col-12 col-xl-6 mb-3">
+                <div class="form-floating">
+                    <input 
+                        type="text" 
+                        name="author"
+                        class="form-control" 
+                        id="floatingAuthorField" 
+                        placeholder="Author"
+                        required>
+                    <label for="floatingAuthorField">Author</label>
+                </div> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <div class="form-floating">
+                    <textarea 
+                        class="form-control" 
+                        name="description"
+                        placeholder="Description" 
+                        id="floatingDescription"
+                        required></textarea>
+                    <label for="floatingDescription">Description</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <div class="form-floating">
+                    <textarea 
+                        class="form-control post-textarea" 
+                        name="text"
+                        placeholder="Text" 
+                        id="floatingText"
+                        required></textarea>
+                    <label for="floatingText">Text</label>
+                </div>                  
+            </div>
+        </div>
+        <button type="submit" class="btn btn-lg btn-success">Create Post</button>                     
+    </form>
+
+
+
+    <pre><code>{{ post.text }}</code></pre>
+
+{% endblock %}

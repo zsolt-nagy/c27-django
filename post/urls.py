@@ -20,4 +20,5 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('posts/<int:id>', views.post, name='post'),
+    path('posts/new', views.new_post, name='new_post'),
 ]

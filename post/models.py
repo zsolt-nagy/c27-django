@@ -8,3 +8,7 @@ class Blogpost(models.Model):
     text=models.TextField()
     publish_date = models.DateField(default=datetime.date.today)
 
+
+
+ 
+
