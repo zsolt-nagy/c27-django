@@ -17,8 +17,7 @@
         <img src="{% static 'base/img/django.png' %}" alt="blog logo" />
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">All Posts</a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="#">New Post</a></li>
             </ul>
         </nav>
@@ -31,8 +30,7 @@
         <p>Copyright &copy; 2023 Zsolt Nagy</p>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">All Posts</a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="#">New Post</a></li>
                 <li><a href="#">Cookie policy</a></li>
                 <li>...</li>

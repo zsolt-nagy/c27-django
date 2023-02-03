@@ -19,4 +19,5 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('posts/<int:id>', views.post, name='post'),
 ]
