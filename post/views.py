@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Blogpost
+import markdown
 
 
 def index(request):
@@ -17,6 +18,7 @@ def post(request, id):
         context = {
             'post': Blogpost.objects.get(id=id),
         }
+        context['html'] = markdown.markdown(context['post'].text) 
         return render(request, 'post/post.html', context)
     except Blogpost.DoesNotExist:
         return render(request, 'post/post_not_found.html')

@@ -10,16 +10,42 @@
     </title>
     {% load static %} 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'base/css/styles.css' %}?v=1.1.2">
+    <link rel="stylesheet" href="{% static 'base/css/styles.css' %}?v=1.1.3">
 </head>
-<body>
+<body class="bg-dark">
     <header>
-        <img src="{% static 'base/img/django.png' %}" alt="blog logo" />
-        <nav>
-            <ul>
-                <li><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="{% url 'new_post' %}">New Post</a></li>
-            </ul>
+        <nav class="navbar bg-dark navbar-dark navbar-expand-sm">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="{% static 'base/img/django.png' %}" 
+                     alt="Logo" 
+                     width="30" 
+                     height="24" 
+                     class="d-inline-block brand-logo">
+                Django Blog
+              </a>
+              <button class="navbar-toggler" 
+                      type="button" 
+                      data-bs-toggle="collapse" 
+                      data-bs-target="#navbarNav" 
+                      aria-controls="navbarNav" 
+                      aria-expanded="false" 
+                      aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">
+                        Home
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'new_post' %}">New Post</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
         </nav>
     </header>
     <main>
@@ -27,13 +53,12 @@
         {% endblock %}        
     </main>
     <footer>
-        <p>Copyright &copy; 2023 Zsolt Nagy</p>
+        <p class="copyright-p">Copyright &copy; 2023 Zsolt Nagy</p>
         <nav>
-            <ul>
-                <li><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="{% url 'new_post' %}">New Post</a></li>
-                <li><a href="#">Cookie policy</a></li>
-                <li>...</li>
+            <ul class="footer-links-container">
+                <li class="footer-link-container"><a href="{% url 'index' %}">Home</a></li>
+                <li class="footer-link-container"><a href="{% url 'new_post' %}">New Post</a></li>
+                <li class="footer-link-container"><a href="#">Cookie policy</a></li>
             </ul>
         </nav>        
     </footer>

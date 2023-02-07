@@ -9,6 +9,6 @@
     <p>Author: {{ post.author }}</p>
     <p>Date: {{ post.publish_date }}</p>
     <p>{{ post.description }}</p>
-    <pre><code>{{ post.text }}</code></pre>
+    <div>{{ html|safe }}</div>
 
 {% endblock %}

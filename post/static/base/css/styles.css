@@ -16,7 +16,7 @@ a:hover {
 }
 
 a:visited {
-    color: lightgreen;
+    color: auto;
 }
 
 a:active {
@@ -34,4 +34,24 @@ form, input, textarea, label {
 
 .form-control.post-textarea {
     height: 200px;
+}
+
+.brand-logo {
+    width: 75px;
+    height: auto; 
+    border-radius: 50%;
+}
+
+.footer-links-container {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.footer-link-container {
+    margin: 0.25px 1rem 0.75rem;
+}
+
+.copyright-p {
+    text-align: center;
 }
